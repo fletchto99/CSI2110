@@ -1,6 +1,8 @@
+package stack;
 
+import stack.Stack;
 
- /**
+/**
   * Implementation of the Stack interface using a fixed-length array.
   * An exception is thrown if a push operation is attempted when the
   * size of the stack is equal to the length of the array.

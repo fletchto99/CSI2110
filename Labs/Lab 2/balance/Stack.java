@@ -1,3 +1,5 @@
+package balance;
+
 public interface Stack {
 
     // Return the number of elements.

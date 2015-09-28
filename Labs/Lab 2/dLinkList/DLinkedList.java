@@ -6,6 +6,8 @@
  *
  */
 
+package dLinkList;
+
 class DLinkedList {
 
     ListNode firstNode;
@@ -13,21 +15,21 @@ class DLinkedList {
 
     // Appends a node to the end of the list
     void AppendNode(ListNode nNode) {
-        InsertNode(nNode,lastNode);
+        InsertNode(nNode, lastNode);
     }
 
     // Inserts a node into the list after pAfter
     void InsertNode(ListNode nNode, ListNode pAfter) {
-
-  	  // INSERT YOUR CODE HERE
-
+        nNode.next = pAfter.next;
+        nNode.previous = pAfter;
+        nNode.next.previous = nNode;
+        pAfter.next = nNode;
     }
 
     // Removes the specified node from the list
     void RemoveNode(ListNode nNode) {
-
-  	  // INSERT YOUR CODE HERE
-  
+        nNode.previous.next = nNode.next;
+        nNode.next.previous = nNode.previous;
     }
 
     // print the content of the list
@@ -35,9 +37,9 @@ class DLinkedList {
         ListNode nNode = null;
         System.out.print("Current list: ");
         for (nNode = firstNode; nNode != null; nNode = nNode.next) {
-            System.out.print(nNode.data +  " ");
+            System.out.print(nNode.data + " ");
         }
         System.out.println("");
-    } 
-  
+    }
+
 }

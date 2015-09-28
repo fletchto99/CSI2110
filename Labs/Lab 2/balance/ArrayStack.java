@@ -1,3 +1,5 @@
+package balance;
+
 public class ArrayStack implements Stack{
 
     public static final int CAPACITY = 1000; //# default capacity of the stack

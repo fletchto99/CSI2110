@@ -1,4 +1,4 @@
-/*  CSI2114 Lab 2 - TestDLinkedList.java
+package dLinkList;/*  CSI2114 Lab 2 - TestDLinkedList.java
  *  
  *  Class to test doubly linked list   
  *  

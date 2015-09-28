@@ -1,3 +1,5 @@
+package stack;
+
 class tryStack2 {
 	
 public	static	void main(String [] args){

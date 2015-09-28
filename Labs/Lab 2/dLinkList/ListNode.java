@@ -1,4 +1,4 @@
-/*  CSI2114 Lab 2 - ListNode.java
+package dLinkList;/*  CSI2114 Lab 2 - ListNode.java
  *  
  *  Class node of a doubly linked list   
  *  

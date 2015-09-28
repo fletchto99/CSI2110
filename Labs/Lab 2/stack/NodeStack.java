@@ -1,6 +1,4 @@
-
-
-
+package stack;
 
 public class NodeStack implements Stack {
   protected Node top;		// reference to the head node
