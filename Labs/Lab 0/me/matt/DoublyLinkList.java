@@ -7,19 +7,19 @@ package me.matt;
  */
 
 class DoublyLinkList {
-    Node<String> llist;
+    Node llist;
 
     DoublyLinkList(int sz) {
         if (sz <= 0) {
             llist = null;
         } else {
             // start with list of size 1
-            llist = new Node("0", null);
+            llist = new Node("0", null, null);
             Node<String> current = llist; // temp Node for loop
             // add further nodes
             for (int i = 1; i < sz; ++i) {
                 // create Node and attach it to the list
-                Node<String> node2Add = new Node(Integer.toString(i), null);
+                Node node2Add = new Node(Integer.toString(i), null, null);
                 current.setNext(node2Add);   // add first Node
                 current = node2Add;
             }

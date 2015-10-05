@@ -30,6 +30,8 @@ public class Node<E> {
         next = n;
     }
 
+
+
     // Accessor methods:
     public E getElement() {
         return element;
