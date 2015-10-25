@@ -1,7 +1,7 @@
-digraph 1d {
-    nodesep=0.3;
-    ranksep=0.2;
-    margin=0.1;
+digraph BST1d {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
     graph [ordering="out"]
     node [shape=circle];
     edge [arrowsize=0.8];
@@ -13,10 +13,10 @@ digraph 1d {
     35 -> 40;
     10 -> 5;
     10 -> 13;
-    19 -> 16;
-    25 -> 21;
-    40 -> 38;
+    19 -> 16 [side="left"];
+    25 -> 21 [side="left"];
+    40 -> 38 [side="left"];
     5 -> 3;
     5 -> 7;
-    13 -> 12;
+    13 -> 12[ side="left"];
 }

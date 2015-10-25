@@ -1,3 +1,5 @@
+// http://stackoverflow.com/questions/10902745/enforcing-horizontal-node-ordering-in-a-dot-tree
+
 BEGIN {
   double tw[node_t];    // width of tree rooted at node
   double nw[node_t];    // width of node
