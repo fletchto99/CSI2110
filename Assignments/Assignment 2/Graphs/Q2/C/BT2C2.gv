@@ -1,0 +1,18 @@
+digraph BT2C1 {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
+    graph [ordering="out"]
+    node [shape=circle];
+    edge [arrowsize=0.8];
+    16 -> 14;
+    16 -> 10;
+    14 -> 8;
+    14 -> 15;
+    10 -> 9;
+    10 -> 3;
+    8 -> 2;
+    8 -> 4;
+    15 -> 1;
+    15 -> 7 [arrowhead=vee, arrowtail=vee, dir=both];
+}

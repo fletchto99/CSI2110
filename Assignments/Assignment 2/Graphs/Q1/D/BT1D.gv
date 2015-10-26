@@ -1,18 +1,20 @@
-digraph BST1d {
+digraph BT1D {
     nodesep=1;
     ranksep=0.1;
     margin=0;
     graph [ordering="out"]
     node [shape=circle];
     edge [arrowsize=0.8];
-    20 -> 16;
+    20 -> 15;
     20 -> 35;
-    16 -> 10;
-    16 -> 19;
+    15 -> 10;
+    15 -> 19;
     35 -> 25;
     35 -> 40;
     10 -> 5;
     10 -> 13;
+    19 -> 16 [side="left"];
+    25 -> 21 [side="left"];
     40 -> 38 [side="left"];
     5 -> 3;
     5 -> 7;

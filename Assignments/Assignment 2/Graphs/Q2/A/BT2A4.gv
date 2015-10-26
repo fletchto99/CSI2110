@@ -1,0 +1,16 @@
+digraph BT2A4 {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
+    graph [ordering="out"]
+    node [shape=circle];
+    edge [arrowsize=0.8];
+    14 -> 8;
+    14 -> 10;
+    8 -> 4;
+    8 -> 7;
+    10 -> 9;
+    10 -> 3;
+    4 -> 2;
+    4 -> 1 [arrowhead=vee, arrowtail=vee, dir=both];
+}
