@@ -1,0 +1,177 @@
+\documentclass[fleqn, 12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amssymb} % math %
+\usepackage{tabularx, multirow} % tables %
+\usepackage{listings} % code %
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{adjustbox}
+
+%Center image and diagrams
+\adjustboxset*{center}
+
+\usepackage[T1]{fontenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+% fix padding on code indents
+\lstset{
+    xleftmargin=-25pt,
+    frame=single,
+    framexleftmargin=-25pt
+}
+
+% Define ceiling and floor functions
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Fix indents
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\noindent
+CSI 2110 \hfill Fall 2015\\
+Computer Science \hfill University of Ottawa
+\begin{center}
+{\bf Assignment \#2}\\
+Matt Langlois - 7731813\\
+October 25\\ \vspace{24pt}
+\end{center}
+
+\hrule
+
+\vspace{12pt}
+
+\section*{Question 1}
+
+\begin{enumerate}[a)]
+\item 
+    20, 15, 10, 5, 3, 7, 13, 12, 19, 16, 35, 25, 40, 38
+\item 
+    3, 7, 5, 12, 13, 10, 16, 19, 15, 25, 38, 40, 35, 20
+\item 
+    Searches for the largest value in a binary tree.
+    \begin{lstlisting}[language=java, linewidth=4in]
+    findMax(Node n) {
+        if (n.hasRightChild()) {
+            return findMax(n.rightChild());
+        }
+        return n;
+    }
+    \end{lstlisting}
+\item \emph{Insert element:} 21 \\
+    \adjincludegraphics[width=0.6\textwidth]{1d.pdf}
+\item
+    \begin{enumerate}[\text{Case} 1:]
+    \item Replace 15 with the left most node of the right subtree. Then remove the leftmost node of the right subtree.\\
+        \adjincludegraphics[width=0.6\textwidth]{1e1.pdf}
+    \item Replace 15 with the right most node of the left subtree. Any children of the right most node become children of the right most node's parent.\\
+        \adjincludegraphics[width=0.6\textwidth]{1e2.pdf}
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Question 2}
+
+\begin{enumerate}[a)]
+\item
+    \begin{enumerate}[Step 1:]
+    \item Replace node with the last node in the heap
+        \begin{center}
+            \begin{tabular}{|*{10}{c|}}
+                \hline
+                \underline{1} & 14 & 10 & 8 & 7 & 9 & 3 & 2 & 4\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2a1.pdf}
+        
+
+    \item Downheap while the children are larger
+        \begin{center}
+            \begin{tabular}{|*{10}{c|}}
+                \hline
+                \underline{14} & \underline{1} & 10 & 8 & 7 & 9 & 3 & 2 & 4\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2a2.pdf}
+        
+    \item Downheap while the children are larger
+        \begin{center}
+            \begin{tabular}{|*{10}{c|}}
+                \hline
+                14 & \underline{8} & 10 & \underline{1} & 7 & 9 & 3 & 2 & 4\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2a3.pdf}
+    
+    \item Downheap to become a leaf node
+        \begin{center}
+            \begin{tabular}{|*{10}{c|}}
+                \hline
+                14 & 8 & 10 & \underline{4} & 7 & 9 & 3 & 2 & \underline{1}\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2a4.pdf}
+    \end{enumerate}
+
+\item Insert element 3 at the left most position on the empty row. No further changes are required as the $7\ge3$ property of the max heap is satisfied
+        \begin{center}
+            \begin{tabular}{|*{11}{c|}}
+                \hline
+                16 & 14 & 10 & 8 & 7 & 9 & 3 & 2 & 4 & 1 & \underline{3}\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2b.pdf}
+        
+\item
+    \begin{enumerate}[Step 1:]
+    \item Insert at left most node in the empty row
+        \begin{center}
+            \begin{tabular}{|*{11}{c|}}
+                \hline
+                16 & 14 & 10 & 8 & 7 & 9 & 3 & 2 & 4 & 1 & \underline{15}\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2c1.pdf}
+        
+
+    \item Upheap 15 until max heap property $parent \ge child$ is met
+        \begin{center}
+            \begin{tabular}{|*{11}{c|}}
+                \hline
+                16 & 14 & 10 & 8 & \underline{15} & 9 & 3 & 2 & 4 & 1 & \underline{7}\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2c2.pdf}
+        
+    \item Upheap once more to satisfy the max-heap property.
+        \begin{center}
+            \begin{tabular}{|*{11}{c|}}
+                \hline
+                16 & \underline{15} & 10 & 8 & \underline{14} & 9 & 3 & 2 & 4 & 1 & 7\\
+                \hline
+            \end{tabular}
+        \end{center}
+        \adjincludegraphics[width=0.6\textwidth]{2c3.pdf}
+    \end{enumerate}
+
+\item Calculate the height of a 2000 element heap:
+    \begin{align*}
+      h(n) &= \floor{log_2 (n)} \\
+      h(2000) &= \floor{log_2 (2000)}\\
+      h(2000) &= 10
+    \end{align*}
+    $\therefore$ the height of a 2000 node heap is 10.
+
+\end{enumerate}
+
+\end{document}
