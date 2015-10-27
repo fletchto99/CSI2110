@@ -1,0 +1,17 @@
+digraph BT36 {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
+    graph [ordering="out"]
+    node [shape=circle];
+    edge [arrowsize=0.8, arrowhead=none, arrowtail=none];
+    32 -> 20 [arrowhead="vee", arrowtail="vee", dir="both"];
+    32 -> 21;
+    20 -> 12;
+    20 -> 9;
+    21 -> 17;
+    21 -> 8;
+    12 -> 3;
+    12 -> 5;
+    9 -> 2 [side="left"];
+}

@@ -98,6 +98,7 @@ October 25\\ \vspace{24pt}
             \end{tabular}
         \end{center}
         \adjincludegraphics[width=0.6\textwidth]{2a2.pdf}
+        \newpage
         
     \item Downheap while the children are larger
         \begin{center}
@@ -121,15 +122,15 @@ October 25\\ \vspace{24pt}
     \end{enumerate}
 
 \item Insert element 3 at the left most position on the empty row. No further changes are required as the $7\ge3$ property of the max heap is satisfied
-        \begin{center}
-            \begin{tabular}{|*{11}{c|}}
-                \hline
-                16 & 14 & 10 & 8 & 7 & 9 & 3 & 2 & 4 & 1 & \underline{3}\\
-                \hline
-            \end{tabular}
-        \end{center}
-        \adjincludegraphics[width=0.6\textwidth]{2b.pdf}
-        
+    \begin{center}
+        \begin{tabular}{|*{11}{c|}}
+            \hline
+            16 & 14 & 10 & 8 & 7 & 9 & 3 & 2 & 4 & 1 & \underline{3}\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{2b.pdf}
+    \newpage
 \item
     \begin{enumerate}[Step 1:]
     \item Insert at left most node in the empty row
@@ -172,6 +173,419 @@ October 25\\ \vspace{24pt}
     \end{align*}
     $\therefore$ the height of a 2000 node heap is 10.
 
+\end{enumerate}
+
+\newpage
+\section*{Question 3}
+
+\begin{enumerate}[Step 1:]
+\item Heapify the contents of the array into a max-heap
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{11}{c|}}
+            \hline
+            20 & 3 & 17 & 5 & 9 & 21 & 8 & 12 & 32 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{31.pdf}
+    
+
+\item Upheap while the parents are smaller
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            20 & 3 & 17 & \underline{32} & 9 & 21 & 8 & 12 & \underline{5} & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{32.pdf}
+    
+\item Upheap while the parents are smaller
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            20 & 3 & \underline{21} & 32 & 9 & \underline{17} & 8 & 12 & 5 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{33.pdf}
+
+\item Upheap while the parents are smaller
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            20 & \underline{32} & 21 & \underline{3} & 9 & 17 & 8 & 12 & 5 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{34.pdf}
+    
+\item Upheap while the parents are smaller
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            20 & 32 & 21 & \underline{12} & 9 & 17 & 8 & \underline{3} & 5 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{35.pdf}
+    
+\item Form a max heap
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            \underline{32} & \underline{20} & 21 & 12 & 9 & 17 & 8 & 3 & 5 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{36.pdf}
+    \newpage
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            \underline{2} & 20 & 21 & 12 & 9 & 17 & 8 & 3 & 5\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{1}{c|}}
+            \hline
+            \underline{32}\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{37.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            21 & 20 & 17 & 12 & 9 & 2 & 8 & 3 & 5\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{1}{c|}}
+            \hline
+            32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.6\textwidth]{38.pdf}
+    \newpage
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{8}{c|}}
+            \hline
+            \underline{5} & 20 & 17 & 12 & 9 & 2 & 8 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{2}{c|}}
+            \hline
+            \underline{21} & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.5\textwidth]{39.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{8}{c|}}
+            \hline
+            20 & 12 & 17 & 5 & 9 & 2 & 8 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{2}{c|}}
+            \hline
+            21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.5\textwidth]{310.pdf}
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{7}{c|}}
+            \hline
+            3 & 12 & 17 & 5 & 9 & 2 & 8\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{3}{c|}}
+            \hline
+            \underline{20} & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.4\textwidth]{311.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{7}{c|}}
+            \hline
+            17 & 12 & 8 & 5 & 9 & 2 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{3}{c|}}
+            \hline
+            20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.4\textwidth]{312.pdf}
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{6}{c|}}
+            \hline
+            3 & 12 & 8 & 5 & 9 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            \underline{17} & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.4\textwidth]{313.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{6}{c|}}
+            \hline
+            12 & 9 & 8 & 5 & 3 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.4\textwidth]{314.pdf}
+    \newpage
+   
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            2 & 9 & 8 & 5 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            \underline{12} & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.35\textwidth]{315.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            9 & 5 & 8 & 2 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.35\textwidth]{316.pdf}
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            3 & 5 & 8 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{6}{c|}}
+            \hline
+            \underline{9} & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.3\textwidth]{317.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            8 & 5 & 3 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{6}{c|}}
+            \hline
+            9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.3\textwidth]{318.pdf}
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{3}{c|}}
+            \hline
+            2 & 5 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{7}{c|}}
+            \hline
+            \underline{8} & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.2\textwidth]{319.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{3}{c|}}
+            \hline
+            5 & 2 & 3\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{7}{c|}}
+            \hline
+            8 & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.2\textwidth]{320.pdf}
+    \newpage
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Heap:
+        \begin{tabular}{|*{2}{c|}}
+            \hline
+            3 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{8}{c|}}
+            \hline
+            \underline{5} & 8 & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.15\textwidth]{321.pdf}
+    
+\item Form a max-heap with the remaining elements
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{2}{c|}}
+            \hline
+            3 & 2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{8}{c|}}
+            \hline
+            5 & 8 & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.15\textwidth]{322.pdf}
+    
+\item Remove the max from the heap and add it to the front of the sorted sequence
+    \begin{center}
+        Max-heap:
+        \begin{tabular}{|*{1}{c|}}
+            \hline
+            2\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{9}{c|}}
+            \hline
+            \underline{3} & 5 & 8 & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \adjincludegraphics[width=0.1\textwidth]{323.pdf}
+    \newpage
+    
+\item Take the final element and add it to the sorted sequence to complete the heapsort
+    \begin{center}
+        Sorted Sequence:
+        \begin{tabular}{|*{10}{c|}}
+            \hline
+            \underline{2} & 3 & 5 & 8 & 9 & 12 & 17 & 20 & 21 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+    Sorted sequence after heapsort is complete:\\
+    \adjincludegraphics[width=0.6\textwidth]{324.pdf}
+    
 \end{enumerate}
 
 \end{document}

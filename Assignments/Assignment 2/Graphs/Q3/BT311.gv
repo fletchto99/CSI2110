@@ -1,0 +1,14 @@
+digraph BT311 {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
+    graph [ordering="out"]
+    node [shape=circle];
+    edge [arrowsize=0.8, arrowhead=none, arrowtail=none];
+    3 -> 12;
+    3 -> 17;
+    12 -> 5;
+    12 -> 9;
+    17 -> 2;
+    17 -> 8;
+}

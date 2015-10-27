@@ -1,0 +1,9 @@
+digraph BT323 {
+    nodesep=1;
+    ranksep=0.1;
+    margin=0;
+    graph [ordering="out"]
+    node [shape=circle];
+    edge [arrowsize=0.8, arrowhead=none, arrowtail=none];
+    3 -> 2 [side="left"];
+}
