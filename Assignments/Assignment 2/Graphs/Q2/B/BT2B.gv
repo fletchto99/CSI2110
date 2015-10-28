@@ -5,16 +5,16 @@ digraph BT2B {
     graph [ordering="out"]
     node [shape=circle];
     edge [arrowsize=0.8, arrowhead=none, arrowtail=none];
-    3.1 [label="3"]; //Special case to allow duplicates
-    3.2 [label="3"]; //Special case to allow duplicates
     16 -> 14;
     16 -> 10;
     14 -> 8;
     14 -> 7;
     10 -> 9;
+    3.1 [label="3"]; //Special case to allow duplicates
     10 -> 3.1;
     8 -> 2;
     8 -> 4;
     7 -> 1;
+    3.2 [label="3"]; //Special case to allow duplicates
     7 -> 3.2;
 }
