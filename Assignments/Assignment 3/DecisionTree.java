@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 public class DecisionTree {
 
     private DecisionStump root;
@@ -90,25 +87,5 @@ public class DecisionTree {
         if ((right = stump.getSmallerBranch()) != null) {
             preOrderPrint(right);
         }
-    }
-
-    public static void main(String[] args) {
-
-        // here is how to read the file containing the pre-classified samples
-        try {
-            Scanner scanner = new Scanner(new File("iris.data.txt"));
-            scanner.useDelimiter("[,\r\n]+");
-            while (scanner.hasNextDouble()) {
-                System.out.println("=" + scanner.nextDouble());
-                System.out.println("=" + scanner.nextDouble());
-                System.out.println("=" + scanner.nextDouble());
-                System.out.println("=" + scanner.nextDouble());
-                System.out.println("=" + scanner.next());
-            }
-        } catch (Exception e) {
-            System.out.println("Error reading file...");
-        }
-
-        // ********* add code for part B and part C here *************** //
     }
 }
