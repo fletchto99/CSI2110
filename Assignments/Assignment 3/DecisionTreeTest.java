@@ -18,66 +18,57 @@ public class DecisionTreeTest {
             final List<String> lines = Files.readAllLines(Paths.get(args[0]), StandardCharsets.UTF_8);
 
             if (lines != null) {
-                System.out.println("Creating decision tree");
+                System.out.println("--------PART B ANSWER--------");
+                System.out.printf("Creating decision tree%n%n");
                 DecisionTree dt = new DecisionTree(6, 3);
-                System.out.println();
 
-                System.out.println("Updating root to use index=0 threshold=5");
+                System.out.printf("Updating root to use index=0 threshold=5%n%n");
                 dt.replace(dt.getRoot(), 0, 5);
-                System.out.println();
 
-                System.out.println("Training decision tree from file specified");
+                System.out.println("Training decision tree from file specified%n%n");
                 train(lines, dt);
-                System.out.println();
 
-                System.out.println("Printing a 1 node decision tree");
+                System.out.println("Printing a 1 node decision tree%n%n");
                 dt.print();
-                System.out.println();
 
-                System.out.println("Replacing node with smallest maximal probability");
+                System.out.printf("Replacing node with smallest maximal probability%n%n");
                 dt.replace(dt.getSmallestMaxProb(), 2, 2.5);
 
-                System.out.println("Resetting decision tree");
+                System.out.printf("Resetting decision tree%n%n");
                 dt.resetAll();
-                System.out.println();
 
-                System.out.println("Retraining decision tree");
+                System.out.printf("Retraining decision tree%n%n");
                 train(lines, dt);
-                System.out.println();
 
-                System.out.println("Printing a 2 node decision tree");
+                System.out.printf("Printing a 2 node decision tree%n%n");
                 dt.print();
-                System.out.println();
 
-                System.out.println("Replacing smallest max prob node");
+                System.out.printf("Replacing smallest max prob node%n%n");
                 dt.replace(dt.getSmallestMaxProb(), 1, 3);
-                System.out.println();
 
 
-                System.out.println("Resetting decision tree");
+                System.out.printf("Resetting decision tree%n%n");
                 dt.resetAll();
-                System.out.println();
 
-                System.out.println("Retraining decision tree");
+                System.out.printf("Retraining decision tree%n%n");
                 train(lines, dt);
-                System.out.println();
 
-                System.out.println("Printing a 3 node decision tree");
+                System.out.printf("Printing a 3 node decision tree%n%n");
                 dt.print();
-                System.out.println();
 
 
+                System.out.println("--------PART C ANSWER--------");
 
+                //Create an instance of random
                 final Random r = new Random();
 
                 //Generate random threshold and indexes
 
                 //Build the decision tree
-                System.out.println("Generating a random decision tree");
+                System.out.printf("Generating a random decision tree%n%n");
                 DecisionTree randomTree = new DecisionTree(6, 3);
                 randomTree.replace(randomTree.getRoot(), r.nextInt(4), r.nextDouble() * 10.0);
                 train(lines, randomTree);
-                System.out.println();
 
                 int iterations = r.nextInt(50);
                 System.out.printf("Performing %d training iterations on random tree%n%n", iterations);
