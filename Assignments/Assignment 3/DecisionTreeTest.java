@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -81,7 +82,12 @@ public class DecisionTreeTest {
 
                     IntStream.rangeClosed(0 , iterations).forEach(i->{
                         //replace the smallest node
-                        dt.replace(dt.getSmallestMaxProb(), r.nextInt(5), r.nextDouble() * 10.0);
+                        try {
+                            dt.replace(dt.getSmallestMaxProb(), r.nextInt(5), r.nextDouble() * 10.0);
+                        } catch (NodeReplaceException e) {
+                            System.out.println("Attempted to replace a node which is not external!");
+                            System.exit(1);
+                        }
 
                         //Reset the tree
                         dt.resetAll();
@@ -94,9 +100,10 @@ public class DecisionTreeTest {
                     dt.print();
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error reading file");
+        } catch (IOException e) {
+            System.out.println("Error reading file!");
+        } catch (NodeReplaceException e) {
+            System.out.println("Attempted to replace a node which was not external!");
         }
     }
 

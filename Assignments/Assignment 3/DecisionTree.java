@@ -20,9 +20,9 @@ public class DecisionTree {
     }
 
     // replace a leaf node by a DecisionStump with two leaves
-    public void replace(DecisionStump leaf, int featureIndex, double threshold) {
+    public void replace(DecisionStump leaf, int featureIndex, double threshold) throws NodeReplaceException {
         if (!leaf.isExternal()) {
-            throw new RuntimeException("Leaf being replaced must be external!");
+            throw new NodeReplaceException("Leaf being replaced must be external!");
         }
 
         DecisionStump replacement = new DecisionStump(featureIndex, threshold);
