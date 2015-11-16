@@ -20,7 +20,7 @@ public class DecisionTreeTest {
             if (lines != null) {
                 System.out.println("--------PART B ANSWER--------");
                 System.out.printf("Creating decision tree%n%n");
-                DecisionTree dt = new DecisionTree(6, 3);
+                final DecisionTree dt = new DecisionTree(6, 3);
 
                 System.out.printf("Updating root to use index=0 threshold=5%n%n");
                 dt.replace(dt.getRoot(), 0, 5);
@@ -100,7 +100,7 @@ public class DecisionTreeTest {
         }
     }
 
-    private static int getDecisionClass(String clazz) {
+    private static int getDecisionClass(final String clazz) {
         switch (clazz) {
             case "Iris-setosa":
                 return 0;
@@ -112,7 +112,7 @@ public class DecisionTreeTest {
         return -1;
     }
 
-    private static void train(List<String> lines, DecisionTree dt) {
+    private static void train(final List<String> lines, final DecisionTree dt) {
         lines.forEach(line -> {
             String[] split = line.split(",");
             if (split.length != 5) {
