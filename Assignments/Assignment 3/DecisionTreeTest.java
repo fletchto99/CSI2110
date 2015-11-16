@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class DecisionTreeTest {
 
-    private static final boolean MODE_RANDOM = true;
+    private static final boolean MODE_RANDOM = false;
 
     public static void main(String[] args) {
         if (args.length != 1) {
@@ -33,7 +33,7 @@ public class DecisionTreeTest {
                     train(lines, dt);
                     System.out.println();
 
-                    System.out.println("Printing the nodes of the decision tree");
+                    System.out.println("Printing a 1 node decision tree");
                     dt.print();
                     System.out.println();
 
@@ -48,7 +48,7 @@ public class DecisionTreeTest {
                     train(lines, dt);
                     System.out.println();
 
-                    System.out.println("Printing decision tree");
+                    System.out.println("Printing a 2 node decision tree");
                     dt.print();
                     System.out.println();
 
@@ -63,6 +63,9 @@ public class DecisionTreeTest {
 
                     System.out.println("Retraining decision tree");
                     train(lines, dt);
+
+                    System.out.println("Printing a 3 node decision tree");
+                    dt.print();
                 } else {
 
                     final Random r = new Random();
