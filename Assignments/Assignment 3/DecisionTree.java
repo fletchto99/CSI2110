@@ -77,9 +77,8 @@ public class DecisionTree {
         ds.resetProbCount();
 
         if (!ds.isExternal()) {
-
-            ds.getSmallerBranch().resetProbCount();
-            ds.getGreaterBranch().resetProbCount();
+            reset(ds.getSmallerBranch());
+            reset(ds.getGreaterBranch());
         }
     }
 
