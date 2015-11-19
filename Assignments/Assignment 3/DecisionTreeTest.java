@@ -25,10 +25,10 @@ public class DecisionTreeTest {
                 System.out.printf("Updating root to use index=0 threshold=5%n%n");
                 dt.replace(dt.getRoot(), 0, 5);
 
-                System.out.println("Training decision tree from file specified%n%n");
+                System.out.printf("Training decision tree from file specified%n%n");
                 train(lines, dt);
 
-                System.out.println("Printing a 1 node decision tree%n%n");
+                System.out.printf("Printing a 1 node decision tree%n%n");
                 dt.print();
 
                 System.out.printf("Replacing node with smallest maximal probability%n%n");
@@ -57,7 +57,7 @@ public class DecisionTreeTest {
                 dt.print();
 
 
-                System.out.println("--------PART C ANSWER--------");
+                System.out.printf("%n--------PART C ANSWER--------%n");
 
                 //Create an instance of random
                 final Random r = new Random();

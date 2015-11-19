@@ -88,7 +88,11 @@ public class DecisionTree {
     }
 
     private void preOrderPrint(DecisionStump stump) {
-        System.out.printf("%s max probability class is %d with %.2f%%%n", stump, stump.getMaxClass(), (stump.getMaxProb() * 100));
+        if (stump.getMaxProb() == Double.MAX_VALUE) {
+            System.out.printf("%s has an undefined probability%n", stump);
+        } else {
+            System.out.printf("%s max probability class is %d with %.2f%%%n", stump, stump.getMaxClass(), (stump.getMaxProb() != Double.MAX_VALUE ? stump.getMaxProb() * 100 : -1));
+        }
         DecisionStump left, right;
         if ((left = stump.getSmallerBranch()) != null) {
             preOrderPrint(left);

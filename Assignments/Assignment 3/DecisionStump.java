@@ -72,7 +72,7 @@ public class DecisionStump {
     public double getMaxProb() {
 
         if (total == 0) {
-            return 0.0;
+            return Double.MAX_VALUE;
         }
 
         return (double) (classFreq[getMaxClass()]) / total;
