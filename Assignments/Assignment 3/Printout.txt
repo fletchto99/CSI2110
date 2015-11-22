@@ -1,0 +1,161 @@
+--------PART B ANSWER--------
+Creating decision tree
+
+Updating root to use index=0 threshold=5
+
+Training decision tree from file specified
+
+Printing a 1 node decision tree
+
+(0 of 6 ,5.0 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(-1 of 6 ,0.0 , [20,1,1] of 22) max probability class is 0 with 90.91%
+(-1 of 6 ,0.0 , [30,49,49] of 128) max probability class is 1 with 38.28%
+Replacing node with smallest maximal probability
+
+Resetting decision tree
+
+Retraining decision tree
+
+Printing a 2 node decision tree
+
+(0 of 6 ,5.0 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(-1 of 6 ,0.0 , [20,1,1] of 22) max probability class is 0 with 90.91%
+(2 of 6 ,2.5 , [30,49,49] of 128) max probability class is 1 with 38.28%
+(-1 of 6 ,0.0 , [30,0,0] of 30) max probability class is 0 with 100.00%
+(-1 of 6 ,0.0 , [0,49,49] of 98) max probability class is 1 with 50.00%
+Replacing smallest max prob node
+
+Resetting decision tree
+
+Retraining decision tree
+
+Printing a 3 node decision tree
+
+(0 of 6 ,5.0 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(-1 of 6 ,0.0 , [20,1,1] of 22) max probability class is 0 with 90.91%
+(2 of 6 ,2.5 , [30,49,49] of 128) max probability class is 1 with 38.28%
+(-1 of 6 ,0.0 , [30,0,0] of 30) max probability class is 0 with 100.00%
+(1 of 6 ,3.0 , [0,49,49] of 98) max probability class is 1 with 50.00%
+(-1 of 6 ,0.0 , [0,33,20] of 53) max probability class is 1 with 62.26%
+(-1 of 6 ,0.0 , [0,16,29] of 45) max probability class is 2 with 64.44%
+
+--------PART C ANSWER--------
+Generating a random decision tree from file specified
+
+Performing 49 training iterations on random tree
+
+Printing a random decision tree
+(1 of 6 ,1.8083409024960406 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(0 of 6 ,6.442064942265916 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(0 of 6 ,1.7756587217818298 , [50,41,24] of 115) max probability class is 0 with 43.48%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(1 of 6 ,3.152036644402049 , [50,41,24] of 115) max probability class is 0 with 43.48%
+(1 of 6 ,1.3356691498301554 , [13,37,20] of 70) max probability class is 1 with 52.86%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(0 of 6 ,9.114718890487872 , [13,37,20] of 70) max probability class is 1 with 52.86%
+(2 of 6 ,5.233715039084031 , [13,37,20] of 70) max probability class is 1 with 52.86%
+(0 of 6 ,7.059739768018728 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(0 of 6 ,0.6428368036443177 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,2.4867623158622507 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(3 of 6 ,4.898176207461798 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(3 of 6 ,7.002155275260985 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(0 of 6 ,2.5126987535374843 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(0 of 6 ,1.807763140700307 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(0 of 6 ,6.462732373582413 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(2 of 6 ,1.605161707541286 , [13,37,14] of 64) max probability class is 1 with 57.81%
+(-1 of 6 ,0.0 , [13,0,0] of 13) max probability class is 0 with 100.00%
+(3 of 6 ,0.3153799585260675 , [0,37,14] of 51) max probability class is 1 with 72.55%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,2.7790668451416067 , [0,37,14] of 51) max probability class is 1 with 72.55%
+(0 of 6 ,5.6864215743703985 , [0,37,14] of 51) max probability class is 1 with 72.55%
+(-1 of 6 ,0.0 , [0,16,2] of 18) max probability class is 1 with 88.89%
+(0 of 6 ,8.47205280398719 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(1 of 6 ,9.454437240578025 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(0 of 6 ,7.394891836811064 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(1 of 6 ,3.750460691468761 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(0 of 6 ,3.4161583629052905 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(1 of 6 ,5.138807900787972 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(1 of 6 ,5.93284907533023 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(0 of 6 ,6.395987961125699 , [0,21,12] of 33) max probability class is 1 with 63.64%
+(0 of 6 ,7.9686199134666404 , [0,20,12] of 32) max probability class is 1 with 62.50%
+(2 of 6 ,0.6210361758707483 , [0,20,12] of 32) max probability class is 1 with 62.50%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,9.895628288222895 , [0,20,12] of 32) max probability class is 1 with 62.50%
+(3 of 6 ,1.8941329487550973 , [0,20,12] of 32) max probability class is 1 with 62.50%
+(1 of 6 ,1.2121742085510678 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,4.56045603226082 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(2 of 6 ,5.906294225931137 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(1 of 6 ,9.10774438725909 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(3 of 6 ,9.41508059384273 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(2 of 6 ,5.605175817482804 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(3 of 6 ,1.799748640318547 , [0,20,7] of 27) max probability class is 1 with 74.07%
+(-1 of 6 ,0.0 , [0,20,2] of 22) max probability class is 1 with 90.91%
+(-1 of 6 ,0.0 , [0,0,5] of 5) max probability class is 2 with 100.00%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,5] of 5) max probability class is 2 with 100.00%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,1,0] of 1) max probability class is 1 with 100.00%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,6] of 6) max probability class is 2 with 100.00%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [37,4,4] of 45) max probability class is 0 with 82.22%
+(3 of 6 ,0.6236316273237474 , [0,9,26] of 35) max probability class is 2 with 74.29%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,5.8366170773367365 , [0,9,26] of 35) max probability class is 2 with 74.29%
+(3 of 6 ,7.890683308121991 , [0,9,26] of 35) max probability class is 2 with 74.29%
+(1 of 6 ,0.8250475054892981 , [0,9,26] of 35) max probability class is 2 with 74.29%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(2 of 6 ,5.221933404123698 , [0,9,26] of 35) max probability class is 2 with 74.29%
+(2 of 6 ,1.6988046448891025 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(3 of 6 ,6.529214551997496 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(2 of 6 ,0.21371628915702656 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(2 of 6 ,3.5806085973931667 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(2 of 6 ,2.0139144715568893 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(1 of 6 ,3.8849540651260472 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(1 of 6 ,5.958089276179627 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(0 of 6 ,5.082207503521755 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,9,4] of 13) max probability class is 1 with 69.23%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,22] of 22) max probability class is 2 with 100.00%
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 6 ,0.0 , [0,0,0] of 0) has an undefined probability
+
+Generally the random algorithm in part C produces more accurate results than
+the algorithm in part b. This can be seen because there are more external
+decision stumps with a higher max probability. Therefore the classes are spread
+more evenly. In this case the average probability for a decision of the
+external nodes in the random tree was 93.13 and the specific tree was 79.40
+
+Now generating 1000 decision trees to determine if a random tree is better
+
+Of the 1000 random decision trees built, 782 had an average decision probability greater than that of the specific tree
+Process finished with exit code 0

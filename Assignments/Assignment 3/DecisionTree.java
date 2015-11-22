@@ -52,7 +52,7 @@ public class DecisionTree {
     }
 
     private DecisionStump getSmallestMaxProbRecursive(DecisionStump current, DecisionStump smallest) {
-        if(!current.isExternal()) {
+        if (!current.isExternal()) {
             DecisionStump left = getSmallestMaxProbRecursive(current.getSmallerBranch(), smallest);
             DecisionStump right = getSmallestMaxProbRecursive(current.getGreaterBranch(), smallest);
             return left.getMaxProb() < right.getMaxProb() ? left : right;
@@ -100,5 +100,39 @@ public class DecisionTree {
         if ((right = stump.getGreaterBranch()) != null) {
             preOrderPrint(right);
         }
+    }
+
+    public double getAvgExternalProbibality() {
+        double totalProb = getTotalProbiblality(this.root);
+        int numExternal = getNumExternal(this.root);
+        return totalProb / numExternal;
+    }
+
+    private double getTotalProbiblality(DecisionStump ds) {
+        if (ds.isExternal()) {
+            if (ds.getMaxProb() == Double.MAX_VALUE) {
+                return -1;
+            }
+            return ds.getMaxProb() * 100;
+        }
+        double smaller = getTotalProbiblality(ds.getSmallerBranch());
+        double greater = getTotalProbiblality(ds.getGreaterBranch());
+        if (smaller == -1 || greater == -1) {
+            if (smaller == -1 && greater == -1) {
+                return -1;
+            }
+            return smaller == -1 ? greater : smaller;
+        }
+        return smaller + greater;
+    }
+
+    private int getNumExternal(DecisionStump ds) {
+        if (ds.isExternal()) {
+            if (ds.getMaxProb() == Double.MAX_VALUE) {
+                return 0;
+            }
+            return 1;
+        }
+        return getNumExternal(ds.getGreaterBranch()) + getNumExternal(ds.getSmallerBranch());
     }
 }
