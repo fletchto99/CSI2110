@@ -36,7 +36,6 @@ import java.util.NoSuchElementException;
  */
 public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
 
-
     public int getHeight() {
         return getHeight(this.root());
     }

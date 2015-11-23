@@ -21,7 +21,8 @@
 // (Lachlan needs to add here the details on his update)
 // ==========================================================================
 
-import net.datastructures.*;
+import net.datastructures.AVLTreeMap;
+import net.datastructures.TreeMap;
 
 public class Verify {
     protected int d_totalHeightAVL;
