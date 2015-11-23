@@ -20,18 +20,17 @@
 //
 // ==========================================================================
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.StringTokenizer;
-import java.io.InputStreamReader;
-import java.io.IOException;
-
-import java.util.*;
-
+import net.datastructures.AdjacencyMapGraph;
+import net.datastructures.Edge;
 import net.datastructures.Graph;
 import net.datastructures.Vertex;
-import net.datastructures.Edge;
-import net.datastructures.AdjacencyMapGraph;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
 
 
 public class SimpleGraph {
@@ -107,15 +106,21 @@ public class SimpleGraph {
         Vertex<String> vt = getVertex(vert);
         visited = new Hashtable<>();
         DFS(this.sGraph, vt);
-        return;
     }
 
 
     private void DFS(Graph<String, String> graph, Vertex<String> v) {
-
-        /***** please implement depth-first search here ************/
-
-        return;
+        if(!visited.containsKey(v.getElement())) {
+            visited.put(v.getElement(), true);
+            startVisit(v);
+            graph.outgoingEdges(v).forEach(edge -> {
+                Vertex<String> opp = graph.opposite(v, edge);
+                if (!visited.containsKey(opp.getElement())) {
+                    DFS(graph, opp);
+                }
+            });
+            finishVisit(v);
+        }
     }
 
     private void startVisit(Vertex<String> v) {
@@ -140,7 +145,6 @@ public class SimpleGraph {
         for (Edge<String> es : sGraph.edges()) {
             System.out.println(es.getElement());
         }
-        return;
     }
 
 
@@ -170,7 +174,6 @@ public class SimpleGraph {
             System.out.println("Start Vertex for DFS:");
             sGraph.printDFS(readVertex());
         } catch (Exception except) {
-            System.err.println(except);
             except.printStackTrace();
         }
     }
