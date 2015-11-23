@@ -55,7 +55,7 @@ public class DecisionTreeTest {
     public static DecisionTree buildSpecificTree(List<String> lines) throws NodeReplaceException {
         System.out.println("--------PART B ANSWER--------");
         System.out.printf("Creating decision tree%n%n");
-        final DecisionTree specificTree = new DecisionTree(6, 3);
+        final DecisionTree specificTree = new DecisionTree(4, 3);
 
         System.out.printf("Updating root to use index=0 threshold=5%n%n");
         specificTree.replace(specificTree.getRoot(), 0, 5);
@@ -109,7 +109,7 @@ public class DecisionTreeTest {
             System.out.printf("Generating a random decision tree from file specified%n%n");
         }
 
-        DecisionTree randomTree = new DecisionTree(6, 3);
+        DecisionTree randomTree = new DecisionTree(4, 3);
         randomTree.replace(randomTree.getRoot(), r.nextInt(4), r.nextDouble() * 10.0);
         train(lines, randomTree);
 
