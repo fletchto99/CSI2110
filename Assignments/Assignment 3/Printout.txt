@@ -42,62 +42,70 @@ Printing a 3 node decision tree
 --------PART C ANSWER--------
 Generating a random decision tree from file specified
 
-Performing 26 training iterations on random tree
+Performing 30 training iterations on random tree
 
 Printing a random decision tree
-(2 of 4 ,9.212912571235435 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(1 of 4 ,6.851846954547911 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(0 of 4 ,2.001922848760188 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(0 of 4 ,9.721166336135074 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(3 of 4 ,9.214703083570697 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(3 of 4 ,7.336684188556949 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(3 of 4 ,9.72778351436723 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(0 of 4 ,5.376254367823878 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(-1 of 4 ,0.0 , [40,5,1] of 46) max probability class is 0 with 86.96%
+(0 of 4 ,4.271566767564713 , [10,45,49] of 104) max probability class is 2 with 47.12%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(2 of 4 ,7.99288095994009 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(0 of 4 ,2.3729072260179205 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(0 of 4 ,7.39641330791745 , [10,45,49] of 104) max probability class is 2 with 47.12%
+(0 of 4 ,7.05773436662003 , [10,45,42] of 97) max probability class is 1 with 46.39%
+(0 of 4 ,8.296454567339785 , [10,45,37] of 92) max probability class is 1 with 48.91%
+(0 of 4 ,8.025744519686903 , [10,45,37] of 92) max probability class is 1 with 48.91%
+(3 of 4 ,2.1832581881936095 , [10,45,37] of 92) max probability class is 1 with 48.91%
+(3 of 4 ,4.561383021909553 , [10,45,24] of 79) max probability class is 1 with 56.96%
+(0 of 4 ,7.8245276536716055 , [10,45,24] of 79) max probability class is 1 with 56.96%
+(1 of 4 ,3.473202229911241 , [10,45,24] of 79) max probability class is 1 with 56.96%
+(1 of 4 ,5.64040601859575 , [2,45,24] of 71) max probability class is 1 with 63.38%
+(2 of 4 ,3.5165070449094458 , [2,45,24] of 71) max probability class is 1 with 63.38%
+(-1 of 4 ,0.0 , [2,1,0] of 3) max probability class is 0 with 66.67%
+(2 of 4 ,8.319031603884271 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(0 of 4 ,9.890467606437142 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(3 of 4 ,7.162078434857223 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(0 of 4 ,8.353941978834316 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(2 of 4 ,7.71750083379028 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(0 of 4 ,9.490379076274309 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(0 of 4 ,5.061658422070412 , [0,44,24] of 68) max probability class is 1 with 64.71%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(3 of 4 ,8.925132315933705 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(3 of 4 ,5.317918176840921 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(2 of 4 ,0.042622616290212134 , [50,50,50] of 150) max probability class is 0 with 33.33%
+(1 of 4 ,9.109681697517676 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(0 of 4 ,5.840935926937087 , [0,44,24] of 68) max probability class is 1 with 64.71%
+(-1 of 4 ,0.0 , [0,18,4] of 22) max probability class is 1 with 81.82%
+(0 of 4 ,8.640699095567884 , [0,26,20] of 46) max probability class is 1 with 56.52%
+(1 of 4 ,4.393995084821796 , [0,26,20] of 46) max probability class is 1 with 56.52%
+(2 of 4 ,2.4535821037193575 , [0,26,20] of 46) max probability class is 1 with 56.52%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(2 of 4 ,7.662845090255531 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(3 of 4 ,6.679627132898467 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(1 of 4 ,4.731576301702024 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(2 of 4 ,7.379964034846155 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(2 of 4 ,4.860101794255694 , [50,50,50] of 150) max probability class is 0 with 33.33%
-(3 of 4 ,8.709035596439952 , [50,46,3] of 99) max probability class is 0 with 50.51%
-(2 of 4 ,3.593209584140382 , [50,46,3] of 99) max probability class is 0 with 50.51%
-(1 of 4 ,0.28163031939855143 , [50,5,0] of 55) max probability class is 0 with 90.91%
+(0 of 4 ,9.797490598090423 , [0,26,20] of 46) max probability class is 1 with 56.52%
+(0 of 4 ,6.054869373200367 , [0,26,20] of 46) max probability class is 1 with 56.52%
+(-1 of 4 ,0.0 , [0,6,3] of 9) max probability class is 1 with 66.67%
+(1 of 4 ,5.159313453418658 , [0,20,17] of 37) max probability class is 1 with 54.05%
+(2 of 4 ,0.47954779950581505 , [0,20,17] of 37) max probability class is 1 with 54.05%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(0 of 4 ,1.5607830929680777 , [50,5,0] of 55) max probability class is 0 with 90.91%
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(1 of 4 ,2.9418300829773303 , [50,5,0] of 55) max probability class is 0 with 90.91%
-(2 of 4 ,1.3241454314973355 , [2,5,0] of 7) max probability class is 1 with 71.43%
-(-1 of 4 ,0.0 , [1,0,0] of 1) max probability class is 0 with 100.00%
-(1 of 4 ,4.868049986430552 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(3 of 4 ,3.819931948883583 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(0 of 4 ,3.884468574722627 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(3 of 4 ,2.556557770630109 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(3 of 4 ,3.2721603053905914 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(0 of 4 ,7.442772406159364 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(2 of 4 ,3.4263622437942285 , [1,5,0] of 6) max probability class is 1 with 83.33%
-(1 of 4 ,4.759009719632089 , [1,3,0] of 4) max probability class is 1 with 75.00%
-(3 of 4 ,7.496887320065496 , [1,3,0] of 4) max probability class is 1 with 75.00%
-(-1 of 4 ,0.0 , [1,3,0] of 4) max probability class is 1 with 75.00%
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,2,0] of 2) max probability class is 1 with 100.00%
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [48,0,0] of 48) max probability class is 0 with 100.00%
-(-1 of 4 ,0.0 , [0,41,3] of 44) max probability class is 1 with 93.18%
-(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
-(-1 of 4 ,0.0 , [0,4,47] of 51) max probability class is 2 with 92.16%
+(-1 of 4 ,0.0 , [0,20,17] of 37) max probability class is 1 with 54.05%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [8,0,0] of 8) max probability class is 0 with 100.00%
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,13] of 13) max probability class is 2 with 100.00%
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
+(-1 of 4 ,0.0 , [0,0,5] of 5) max probability class is 2 with 100.00%
+(-1 of 4 ,0.0 , [0,0,7] of 7) max probability class is 2 with 100.00%
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
 (-1 of 4 ,0.0 , [0,0,0] of 0) has an undefined probability
@@ -107,9 +115,13 @@ Generally the random algorithm in part C produces more accurate results than
 the algorithm in part b. This can be seen because there are more external
 decision stumps with a higher max probability. Therefore the classes are spread
 more evenly. In this case the average probability for a decision of the
-external nodes in the random tree was 93.39 and the specific tree was 79.40
+external nodes in the random tree was 84.02% and the specific tree was 79.40%
+
+Testing a known vector against both the random tree and specific tree: 5.2,3.5,1.5,0.2 [expected: Iris-setosa]
+Testing vector against specific tree: Iris-setosa
+Testing vector against random tree: Iris-setosa
 
 Now generating 1000 decision trees to determine if a random tree is better
 
-Of the 1000 random decision trees built, 806 had an average decision probability greater than that of the specific tree
+Of the 1000 random decision trees built, 797 had an average decision probability greater than that of the specific tree
 Process finished with exit code 0
