@@ -13,7 +13,7 @@
 // Creator: jlang (Jochen Lang)
 // Email:   jlang@site.uottawa.ca
 // ==========================================================================
-// $Log: SimpleGraph.java,v $
+// $Log: SimpleGraphDFS.java,v $
 // Revision 1.1  2006/11/11 03:16:10  jlang
 // Added Lab9
 // Modified Lachlan Plant 2015/11/18
@@ -33,14 +33,14 @@ import java.util.Hashtable;
 import java.util.StringTokenizer;
 
 
-public class SimpleGraph {
+public class SimpleGraphDFS {
     Graph<String, String> sGraph;
 
 
     /**
      * Create a SimpleGraph from file
      */
-    public SimpleGraph(String fileName) throws Exception {
+    public SimpleGraphDFS(String fileName) throws Exception {
         sGraph = new AdjacencyMapGraph<>(false);
         read(fileName);
     }
@@ -168,7 +168,7 @@ public class SimpleGraph {
             System.exit(-1);
         }
         try {
-            SimpleGraph sGraph = new SimpleGraph(argv[0]);
+            SimpleGraphDFS sGraph = new SimpleGraphDFS(argv[0]);
             sGraph.print();
             // Ask for vertex to start
             System.out.println("Start Vertex for DFS:");

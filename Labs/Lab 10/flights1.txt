@@ -1,0 +1,8 @@
+Origin Airport,Origin city,Destination Airport,Destination city,flight number,departure,arrival,priceYOW,Ottawa,YYZ,Toronto,WS363,12:00,13:04,200
+YOW,Ottawa,YYZ,Toronto,AC455,14:00,15:07,225
+YOW,Ottawa,YUL,Montreal,AC104,13:20,14:05,150
+YYZ,Toronto,YVR,Vancouver,WJ709,12:55,15:11,324
+YYZ,Toronto,YVR,Vancouver,AC161,16:15,18:31,600
+YUL,Montreal,YYC,Calgary,WJ217,19:15,21:59,700
+YYC,Calgary,YVR,Vancouver,WJ101,13:25,13:57,150
+YYC,Calgary,YVR,Vancouver,WJ131,23:15,23:47,83
