@@ -1,0 +1,12 @@
+digraph a1 {
+    node [shape = circle]
+    S -> U;
+    S -> P;
+    U -> X;
+    U -> V;
+    P -> Q;
+    X -> Y;
+    V -> W;
+    Y -> R;
+    R -> T;
+}

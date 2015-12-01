@@ -1,0 +1,23 @@
+digraph b5 {
+    node [shape = record,height=.1,label=" | "];
+    n0[label=" | | "];
+    n0 -> n1;
+    nins[label="", width=.4];
+    n0 -> nins;
+    n0 -> n2;
+    n0 -> n3;
+    n4[label=" | | "];
+    n1 -> n4;
+    n5[label="",width=.4];
+    n6[label="",width=.4];
+    n1 -> n5;
+    n1 -> n6;
+    n2 -> n7;
+    n2 -> n8;
+    n2 -> n9;
+    nins -> n13;
+    nins -> 14;
+    n3 -> n10;
+    n3 -> n11;
+    n3 -> n12;
+}
