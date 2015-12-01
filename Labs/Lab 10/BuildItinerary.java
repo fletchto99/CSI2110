@@ -112,6 +112,19 @@ public class BuildItinerary {
         /********************** CODE TO BE ADDED HERE ******************************************/
 
 
+        TimeAtAirport baseTime = new TimeAtAirport(airportDepart, minDepTime);
+
+        ArrayList<Vertex<TimeAtAirport>> minVertecies = new ArrayList<>();
+
+        graph.vertices().forEach(v -> {
+            TimeAtAirport current = v.getElement();
+            if (current.sameAirport(baseTime)) {
+                if(current.compareTo(baseTime) >= 0) {
+                    minVertecies.add(v);
+                }
+            }
+        });
+
         // if bounds for arrival and departure do not work
         if ((minTime.compareTo(new Time(25, 0)) == 0) || (maxTime.compareTo(new Time(-1, -1)) == 0)) {
             return null;
