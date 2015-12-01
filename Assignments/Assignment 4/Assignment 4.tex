@@ -1,0 +1,154 @@
+\documentclass[fleqn, 12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{mathtools, amssymb} % math %
+\usepackage{tabularx, multirow} % tables %
+\usepackage{listings} % code %
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{adjustbox}
+
+%Center image and diagrams
+\adjustboxset*{center}
+
+\usepackage[T1]{fontenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+% fix padding on code indents
+\lstset{
+    xleftmargin=-25pt,
+    frame=single,
+    framexleftmargin=-25pt
+}
+
+% Define ceiling and floor functions
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Fix indents
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\noindent
+CSI 2110 \hfill Fall 2015\\
+Computer Science \hfill University of Ottawa
+\begin{center}
+{\bf Assignment \#4}\\
+Matt Langlois - 7731813\\
+December 7\\ \vspace{24pt}
+\end{center}
+
+\hrule
+
+\vspace{12pt}
+
+\section*{Question 1}
+
+\begin{enumerate}[a)]
+\item 2-4 Tree with 13 3-nodes\\
+    \adjincludegraphics[width=0.6\textwidth]{1a1.pdf}
+\item 
+    After 1 minimum insertion: \\
+    \adjincludegraphics[width=0.6\textwidth]{1b1.pdf}
+    After 2 minimum insertions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1b2.pdf}
+    After 3 minimum insertions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1b3.pdf}
+    \newpage
+    After 4 minimum insertions: \\ 
+    \adjincludegraphics[width=0.6\textwidth]{1b4.pdf}
+    After 5 minimum insertions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1b5.pdf}
+\item 
+    After 1 max deletion: \\
+    \adjincludegraphics[width=0.6\textwidth]{1c1.pdf}
+    After 2 max deletions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1c2.pdf}
+    After 3 max deletions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1c3.pdf}
+    After 4 max deletions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1c4.pdf}
+    After 5 max deletions: \\
+    \adjincludegraphics[width=0.6\textwidth]{1c5.pdf}
+\end{enumerate}
+
+
+\section*{Question 2}
+
+\begin{enumerate}[a)]
+\item
+    DFS Traversal order: $v5 \rightarrow v4 \rightarrow v2 \rightarrow v4 \rightarrow v3 \rightarrow v1 \rightarrow v10 \rightarrow v9 \rightarrow v8 \rightarrow v6 \rightarrow v7$
+    
+    \begin{center}
+        \begin{tabular}{ | l | l |}
+            \hline
+            Discovery Edges & Back Edges \\ \hline
+            $(v5,v4)$ & $(v10,v3)$ \\ \hline
+            $(v4,v2)$ & $(v6,v3)$ \\ \hline
+            $(v4,v3)$ & $(v6,v5)$ \\ \hline
+            $(v3,v1)$ & $(v7,v8)$ \\ \hline
+            $(v1,v10)$ & \\ \hline
+            $(v10,v9)$ & \\ \hline
+            $(v9,v8)$ & \\ \hline
+            $(v8,v6)$ & \\ \hline
+            $(v6,v7)$ & \\
+            \hline
+        \end{tabular}
+    \end{center}
+    
+\item
+    BFS Traversal order: $v5 \rightarrow v4 \rightarrow v2 \rightarrow v4 \rightarrow v3 \rightarrow v1 \rightarrow v10 \rightarrow v9 \rightarrow v8 \rightarrow v6 \rightarrow v7$
+    
+    \begin{center}
+        \begin{tabular}{ | l | l | l | }
+            \hline
+            Level & Discovery Edges & Cross Edges \\ \hline
+            L1 & $(v5,v4)$ & \\ \cline{2-3}
+            & $(v5,v6)$ & \\ \hline
+            L2 & $(v4,v2)$ & $(v6, v3)$ \\ \cline{2-3}
+            & $(v4,v3)$ & \\ \cline{2-3}
+            & $(v6,v7)$ & \\ \cline{2-3}
+            & $(v6,v8)$ & \\ \hline
+            L3 & $(v3,v1)$ & $(v7, v8)$ \\ \cline{2-3}
+            & $(v3,v10)$ & \\ \cline{2-3}
+            & $(v8,v9)$ & \\ \hline
+            L4 & & $(v1,v10)$ \\ \cline{2-3}
+            & & $(v10,v9)$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    
+\end{enumerate}
+
+\newpage
+
+\section*{Question 3}
+
+\begin{enumerate}[a)]
+\item Dijkstra's algorithm trace:
+    \begin{center}
+        \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | }
+            \hline
+            New Vertex & S & P & U & X & Q & Y & V & R & W & T & New Edge \\ \hline
+            S & 0\checkmark & 6 & 3* & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & \\ \hline
+            U & 0\checkmark & 6 & 3\checkmark & 4* & $\infty$ & $\infty$ & 6 & $\infty$ & $\infty$ & $\infty$ & $(S,U)$ \\ \hline
+            X & 0\checkmark & 6* & 3\checkmark & 4\checkmark & 12 & 10 & 6 & $\infty$ & $\infty$ & $\infty$ & $(U,X)$ \\ \hline
+            P & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11 & 10 & 6* & $\infty$ & $\infty$ & $\infty$ & $(S,P)$ \\ \hline
+            V & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11 & 10* & 6\checkmark & $\infty$ & 10 & $\infty$ & $(U,V)$ \\ \hline
+            Y & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11 & 10\checkmark & 6\checkmark & 11 & 10* & $\infty$ & $(X,Y)$ \\ \hline
+            W & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11* & 10\checkmark & 6\checkmark & 11 & 10\checkmark & 15 & $(V,W)$ \\ \hline
+            Q & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11* & 10\checkmark & 15 & $(P,Q)$ \\ \hline
+            R & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11\checkmark & 10\checkmark & 13* & $(Y,R)$ \\ \hline
+            T & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11\checkmark & 10\checkmark & 13\checkmark & $(R,T)$ \\ 
+            \hline
+        \end{tabular}
+    \end{center}
+    Minimum Spanning Tree:\\
+    \adjincludegraphics[width=0.35\textwidth]{3a1.pdf}
+\item SUXYRT is the shortest path from S to T.
+\end{enumerate}
+
+\end{document}
