@@ -21,11 +21,12 @@
  *
  */
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import net.datastructures.Edge;
 import net.datastructures.Graph;
 import net.datastructures.Vertex;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 public class AdjacencyListGraph<V,E> implements Graph<V,E>{

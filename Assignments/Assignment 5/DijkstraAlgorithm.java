@@ -24,6 +24,7 @@ public class DijkstraAlgorithm<V> {
 		Entry[] posInQueue= new Entry[graph.numVertices()];
 
 	    for (int i=0; i< graph.numVertices(); i++) {
+
 			posInQueue[i]=PQ.insert(path.dist[i], graph.getVertexAtPosition(i));
 	    }
 	  
