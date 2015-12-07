@@ -100,27 +100,27 @@ December 7\\ \vspace{24pt}
     \end{center}
     
 \item
-    BFS Traversal order: $v5 \rightarrow v4 \rightarrow v2 \rightarrow v4 \rightarrow v3 \rightarrow v1 \rightarrow v10 \rightarrow v9 \rightarrow v8 \rightarrow v6 \rightarrow v7$
-    
+    BFS Traversal Levels:
+
     \begin{center}
-        \begin{tabular}{ | l | l | l | }
+        \begin{tabular}{ | l | l | l | l | }
             \hline
-            Level & Discovery Edges & Cross Edges \\ \hline
-            L1 & $(v5,v4)$ & \\ \cline{2-3}
-            & $(v5,v6)$ & \\ \hline
-            L2 & $(v4,v2)$ & $(v6, v3)$ \\ \cline{2-3}
-            & $(v4,v3)$ & \\ \cline{2-3}
-            & $(v6,v7)$ & \\ \cline{2-3}
-            & $(v6,v8)$ & \\ \hline
-            L3 & $(v3,v1)$ & $(v7, v8)$ \\ \cline{2-3}
-            & $(v3,v10)$ & \\ \cline{2-3}
-            & $(v8,v9)$ & \\ \hline
-            L4 & & $(v1,v10)$ \\ \cline{2-3}
-            & & $(v10,v9)$ \\
+            Level & Nodes & Discovery Edges & Cross Edges \\ \hline
+            L1 & v4 & $(v5,v4)$ & \\ \cline{2-4}
+            & v6 & $(v5,v6)$ & \\ \hline
+            L2 & v2 & $(v4,v2)$ & $(v6, v3)$ \\ \cline{2-4}
+            & v3 & $(v4,v3)$ & \\ \cline{2-4}
+            & v7 & $(v6,v7)$ & \\ \cline{2-4}
+            & v8 & $(v6,v8)$ & \\ \hline
+            L3 & v1 & $(v3,v1)$ & $(v7, v8)$ \\ \cline{2-4}
+            & v10 & $(v3,v10)$ & \\ \cline{2-4}
+            & v9 & $(v8,v9)$ & \\ \hline
+            L4 & & & $(v1,v10)$ \\ \cline{2-4}
+            & & & $(v10,v9)$ \\
             \hline
         \end{tabular}
     \end{center}
-    
+
 \end{enumerate}
 
 \newpage
@@ -130,7 +130,7 @@ December 7\\ \vspace{24pt}
 \begin{enumerate}[a)]
 \item Dijkstra's algorithm trace:
     \begin{center}
-        \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | }
+        \begin{tabular}{ |*{12}{l|}}
             \hline
             New Vertex & S & P & U & X & Q & Y & V & R & W & T & New Edge \\ \hline
             S & 0\checkmark & 6 & 3* & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & \\ \hline
@@ -142,13 +142,49 @@ December 7\\ \vspace{24pt}
             W & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11* & 10\checkmark & 6\checkmark & 11 & 10\checkmark & 15 & $(V,W)$ \\ \hline
             Q & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11* & 10\checkmark & 15 & $(P,Q)$ \\ \hline
             R & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11\checkmark & 10\checkmark & 13* & $(Y,R)$ \\ \hline
-            T & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11\checkmark & 10\checkmark & 13\checkmark & $(R,T)$ \\ 
+            T & 0\checkmark & 6\checkmark & 3\checkmark & 4\checkmark & 11\checkmark & 10\checkmark & 6\checkmark & 11\checkmark & 10\checkmark & 13\checkmark & $(R,T)$ \\
             \hline
         \end{tabular}
     \end{center}
     Minimum Spanning Tree:\\
     \adjincludegraphics[width=0.35\textwidth]{3a1.pdf}
 \item SUXYRT is the shortest path from S to T.
+\end{enumerate}
+
+\section*{Question 4}
+
+\begin{enumerate}[a)]
+\item Insertion into a hash table using linear probing with the function $h(X)=X\mod11$ on the following elements: 3, 32, 46, 58, 57, 26, 17, 74.
+    \begin{center}
+        \begin{tabular}{|*{12}{c|}}
+            \hline
+            $h(X)$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ \hline
+            x & & & 46 & 3 & 58 & 57 & 26 & 17 & 74 &  & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+
+\item Four elements would have to be probed before we find 57. This is because $57\mod11=2$ but 57 is found at the 5th position.
+
+\item Eight elements would have to be probed before we realize 68 is not in the table. This is because $68\mod11=2$ but the first empty element is found at the 9th position.
+
+\item
+    \begin{enumerate}[i)]
+    \item Insertion into a hash table using linear probing with the double hash function $h_2(X)=7-(X\mod7)$ on the following elements: 3, 32, 46, 58, 57, 26, 17, 74.
+    \begin{center}
+        \begin{tabular}{|*{12}{c|}}
+            \hline
+            $h(X)$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ \hline
+            x & 74 & & 46 & 3 & 26 & & 17 & & 58 & 57 & 32\\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \item Four elements would have to be probed before we find 57. This is because $57\mod11=2$ but element 46 is found at position 2. So then the double hashing algorithm is applied $7-(57\mod7)=6$. Jumping 6 buckets we find 58, jumping 6 more we find 3, jumping 6 more we find 57. $\therefore$ 57 is found on the 4\textsuperscript{th} probe.
+
+    \item Six elements would have to be probed before we realize 68 is not in the table. This is because $68\mod11=2$ but element 46 is found at position 2. So then the double hashing algorithm is applied $7-(68\mod7)=2$. Jumping 2 buckets we find 26, jumping 2 more we find 17, jumping 2 more we find 58, jumping 2 more we find 32 and finally jumping 2 more we find null. $\therefore$ 68 is determine to not be in the hash table on the 6\textsuperscript{th} probe.
+
+    \end{enumerate}
 \end{enumerate}
 
 \end{document}
