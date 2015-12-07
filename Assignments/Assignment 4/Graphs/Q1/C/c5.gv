@@ -1,18 +1,29 @@
 digraph c5 {
-    graph[ordering=out];
-    node [shape = record,height=.1,label=" | "];
-    n0 -> n1;
+    //Global graph settings
+    graph[splines="false",ordering="out"];
+    node [shape = record,height=.1,label="<f0>|<f1> "];
+
+    //Special nodes
+    n3[label="<f0>",width=.4];
+    n10[label="<f0>",width=.4];
+    n11[label="<f0>",width=.4];
+
+    //Root
+    n0:f0:sw -> n1:f1:ne;
     n0 -> n2;
-    n3[label="", width=.4]
-    n0 -> n3;
-    n1 -> n4;
-    n1 -> n5;
-    n1 -> n6;
-    n2 -> n7;
+    n0:f1:se -> n3:f0:nw;
+
+    //Left child of root
+    n1:f0:sw -> n4:f1:ne;
+    n1:f0:se -> n5:f1:nw;
+    n1:f1:se -> n6:f0:nw;
+
+    //center child of root
+    n2:f0:sw -> n7:f1:ne;
     n2 -> n8;
-    n2 -> n9;
-    n10[label="", width=.4]
-    n3 -> n10;
-    n11[label="", width=.4]
-    n3 -> n11
+    n2:f1:se -> n9:f0:nw;
+
+    //Right child of root
+    n3:f0:sw -> n10:f0:ne;
+    n3:f0:se -> n11:f0:nw;
 }

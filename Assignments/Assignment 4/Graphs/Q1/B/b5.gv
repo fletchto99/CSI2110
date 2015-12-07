@@ -1,23 +1,37 @@
 digraph b5 {
-    node [shape = record,height=.1,label=" | "];
-    n0[label=" | | "];
-    n0 -> n1;
-    nins[label="", width=.4];
-    n0 -> nins;
-    n0 -> n2;
-    n0 -> n3;
-    n4[label=" | | "];
-    n1 -> n4;
-    n5[label="",width=.4];
-    n6[label="",width=.4];
-    n1 -> n5;
-    n1 -> n6;
-    n2 -> n7;
-    n2 -> n8;
-    n2 -> n9;
-    nins -> n13;
-    nins -> 14;
-    n3 -> n10;
-    n3 -> n11;
-    n3 -> n12;
+    //Global graph settings
+    graph[splines="false",ordering="out"];
+    node [shape = record,height=.1,label="<f0>|<f1> "];
+
+    //Special labels
+    n0[label="<f0>|<f1>|<f2>"];
+    n2[label="<f0>",width=.4];
+    n5[label="<f0>|<f1>|<f2>"];
+    n6[label="<f0>"width=.4];
+    n7[label="<f0>"width=.4];
+
+    //Root node
+    n0:f0:sw -> n1:f1:ne;
+    n0:f0:se -> n2:f0:n;
+    n0:f1:se -> n3:f0:ne;
+    n0:f2:se -> n4:f0:nw;
+
+    //Left child of root
+    n1:f0:sw -> n5:f2:ne;
+    n1:f0:se -> n6:f0:n;
+    n1:f1:se -> n7:f0:nw;
+
+    //Center left child of root
+    n2:f0:sw -> n8:f1:ne;
+    n2:f0:se -> n9:f0:nw;
+
+    //Center right child of root
+    n3:f0:sw -> n10:f1:ne;
+    n3:f1:sw -> n11:f0:nw;
+    n3:f1:se -> n12:f0:nw;
+
+    //Right child of root
+    n4:f0:sw -> n13:f1:ne;
+    n4:f1:sw -> n14:f0:nw;
+    n4:f1:se -> n15:f0:nw;
 }
