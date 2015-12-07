@@ -1,5 +1,4 @@
 import net.datastructures.Edge;
-import net.datastructures.Stack;
 import net.datastructures.Vertex;
 
 import java.util.ArrayList;
@@ -110,14 +109,14 @@ public class BuildItinerary {
         for(Vertex<TimeAtAirport> v : graph.vertices()) {
             TimeAtAirport current = v.getElement();
             if (minVertex == null && current.sameAirport(startVertex)) {
-                if(current.compareTo(startVertex) >= 0) {
+                if(current.getTime().compareTo(startVertex.getTime()) >= 0) {
                     minVertex = v;
                     minTime = v.getElement().getTime();
                 }
             }
             if (current.sameAirport(endVertex)) {
                 if(current.compareTo(endVertex) <= 0) {
-                    if (maxVertex == null || current.compareTo(maxVertex.getElement()) > 0) {
+                    if (maxVertex == null || current.getTime().compareTo(maxVertex.getElement().getTime()) > 0) {
                         maxVertex = v;
                         maxTime = v.getElement().getTime();
                     }
@@ -194,10 +193,15 @@ public class BuildItinerary {
         for(Vertex<TimeAtAirport> v : graph.vertices()) {
             TimeAtAirport current = v.getElement();
             if (minVertex == null && current.sameAirport(startVertex)) {
-                if(current.compareTo(startVertex) >= 0) {
+                if(current.getTime().compareTo(startVertex.getTime()) >= 0) {
                     minVertex = v;
                 }
             }
+        }
+
+        if (minVertex == null) {
+            System.out.println("You money will get you nowhere; please change your search parameters");
+            return;
         }
 
         DijkstraAlgorithm dijk = new DijkstraAlgorithm();
@@ -211,25 +215,27 @@ public class BuildItinerary {
 
         System.out.println(">>>> Here you will provide info on where to go under $" + dollars);
 
-        ArrayList<Vertex<TimeAtAirport>> visited = new ArrayList<>();
+        ArrayList<TimeAtAirport> visited = new ArrayList<>();
 
         for(Vertex<TimeAtAirport> v : graph.vertices()) {
             if (!v.getElement().getAirport().equals(airportDepart)) {
                 if (spInfo.isReachable(graph.getPositionOfVertex(v))) {
                     int[] path = spInfo.pathFromSourceTo(graph.getPositionOfVertex(v));
                     int cost = 0;
-                    Vertex<TimeAtAirport> lastVertex = null;
+
+                    TimeAtAirport lastVisited = null;
+
                     for(int i = 0; i < path.length -1; i++) {
                         Flight flight = graph.getEdge(graph.getVertexAtPosition(path[i]), graph.getVertexAtPosition(path[i+1])).getElement();
                         if (flight.getCost() != 0) {
+                            lastVisited = graph.getVertexAtPosition(path[i+1]).getElement();
                             cost += flight.getCost();
-                            lastVertex = graph.getVertexAtPosition(path[i+1]);
                         }
                     }
 
-                    if (cost <= dollars && lastVertex != null && !visited.contains(lastVertex)) {
-                        visited.add(lastVertex);
-                        System.out.println(v.getElement());
+                    if (cost <= dollars && lastVisited != null && !visited.contains(lastVisited)) {
+                        visited.add(lastVisited);
+                        System.out.println(lastVisited);
                     }
                 }
             }
