@@ -41,7 +41,7 @@ public class DijkstraAlgorithm<V> {
 	           
 	           if (posInQueue[posv]!=null) {
 	        	   int valueEdge=e.getElement().toIntegral();
-	        	   if (path.dist[posCloudVertex]+ valueEdge< path.dist[posv]) {
+	        	   if (path.dist[posCloudVertex] != Integer.MAX_VALUE && path.dist[posCloudVertex] + valueEdge< path.dist[posv]) {
 	        		   path.dist[posv]=path.dist[posCloudVertex]+ valueEdge;
 	        		   PQ.replaceKey(posInQueue[posv], path.dist[posv]);
 	        		   path.prevVertex[posv]=posCloudVertex;

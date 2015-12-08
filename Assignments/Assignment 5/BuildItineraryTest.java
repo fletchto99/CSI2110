@@ -75,7 +75,7 @@ public class BuildItineraryTest {
 		buildItiner= readFlightsIntoGraph("/Users/mattlanglois/Documents/Programming/School/CSI2110/Assignments/Assignment 5/flights1.txt",false);
         
 		verbose=false;
-//		buildItiner.whereMoneyCanGetMe("YOW", new Time("5:00"), 500, verbose);
+		buildItiner.whereMoneyCanGetMe("YOW", new Time("5:00"), 500, verbose);
 		buildItiner.whereMoneyCanGetMe("YOW", new Time("5:00"), 1000, verbose);
 			
 		

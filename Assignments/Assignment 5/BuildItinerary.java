@@ -94,7 +94,6 @@ public class BuildItinerary {
 
         DijkstraAlgorithm dijk = new DijkstraAlgorithm();
         Vertex<TimeAtAirport> minVertex = null, maxVertex = null;
-        Time minTime = null, maxTime = null;
 
         //This part is to be implemented by students - currently hardcoded values of minVertex and maxVertex
         //that works with the test 'flights1.txt' but students will have to find minVertex and maxVertex
@@ -106,19 +105,19 @@ public class BuildItinerary {
         TimeAtAirport startVertex = new TimeAtAirport(airportDepart, minDepTime);
         TimeAtAirport endVertex = new TimeAtAirport(airportDestin, maxArrTime);
 
-        for(Vertex<TimeAtAirport> v : graph.vertices()) {
+        for (Vertex<TimeAtAirport> v : graph.vertices()) {
             TimeAtAirport current = v.getElement();
-            if (minVertex == null && current.sameAirport(startVertex)) {
-                if(current.getTime().compareTo(startVertex.getTime()) >= 0) {
-                    minVertex = v;
-                    minTime = v.getElement().getTime();
+            if (current.sameAirport(startVertex)) {
+                if (current.getTime().compareTo(startVertex.getTime()) >= 0) {
+                    if (minVertex == null || current.getTime().compareTo(minVertex.getElement().getTime()) < 0) {
+                        minVertex = v;
+                    }
                 }
             }
             if (current.sameAirport(endVertex)) {
-                if(current.compareTo(endVertex) <= 0) {
-                    if (maxVertex == null || current.getTime().compareTo(maxVertex.getElement().getTime()) > 0) {
+                if (current.getTime().compareTo(endVertex.getTime()) <= 0) {
+                    if (maxVertex == null || current.getTime().compareTo(maxVertex.getElement().getTime()) >= 0) {
                         maxVertex = v;
-                        maxTime = v.getElement().getTime();
                     }
                 }
             }
@@ -129,7 +128,7 @@ public class BuildItinerary {
         }
 
         // if bounds for arrival and departure do not work
-        if ((minTime.compareTo(new Time(25, 0)) == 0) || (maxTime.compareTo(new Time(-1, -1)) == 0)) {
+        if ((minVertex.getElement().getTime().compareTo(new Time(25, 0)) == 0) || (maxVertex.getElement().getTime().compareTo(new Time(-1, -1)) == 0)) {
             return null;
         }
 
@@ -158,11 +157,11 @@ public class BuildItinerary {
             ArrayList<Flight> shortestPath = new ArrayList<>();
             int totalCost = 0;
             /************* add the missing code here *************************/
-            for(int i = 0; i < path.length - 1; i++) {
-                Flight flight = graph.getEdge(graph.getVertexAtPosition(path[i]), graph.getVertexAtPosition(path[i+1])).getElement();
+            for (int i = 0; i < path.length - 1; i++) {
+                Flight flight = graph.getEdge(graph.getVertexAtPosition(path[i]), graph.getVertexAtPosition(path[i + 1])).getElement();
                 if (flight.getCost() != 0) {
                     shortestPath.add(flight);
-                    totalCost+= flight.getCost();
+                    totalCost += flight.getCost();
                 }
             }
 
@@ -186,56 +185,67 @@ public class BuildItinerary {
         // Similar to the cheapestItinerary in the determination of the source vertex
         // Using a fixed dummy value now.
 
-        Vertex<TimeAtAirport> minVertex = null;
+//        Vertex<TimeAtAirport> minVertex = null;
 
         TimeAtAirport startVertex = new TimeAtAirport(airportDepart, minDepTime);
 
-        for(Vertex<TimeAtAirport> v : graph.vertices()) {
+        ArrayList<Vertex<TimeAtAirport>> minVerticies = new ArrayList<>();
+
+        for (Vertex<TimeAtAirport> v : graph.vertices()) {
             TimeAtAirport current = v.getElement();
-            if (minVertex == null && current.sameAirport(startVertex)) {
-                if(current.getTime().compareTo(startVertex.getTime()) >= 0) {
-                    minVertex = v;
+            if (current.sameAirport(startVertex)) {
+                if (current.getTime().compareTo(startVertex.getTime()) >= 0) {
+                    minVerticies.add(v);
                 }
             }
         }
 
-        if (minVertex == null) {
+        if (minVerticies.isEmpty()) {
             System.out.println("You money will get you nowhere; please change your search parameters");
             return;
         }
 
-        DijkstraAlgorithm dijk = new DijkstraAlgorithm();
-        DijkstraAlgorithm.ShortestPathsInfo spInfo = dijk.findShortestPaths(minVertex, graph);
-
-        if (verbose) {
-            displayAllPathInfo(spInfo);
-        }
+//        if (verbose) {
+//            displayAllPathInfo(spInfo);
+//        }
 
         /************ code for part 3 to be added ******************************/
 
         System.out.println(">>>> Here you will provide info on where to go under $" + dollars);
 
         ArrayList<TimeAtAirport> visited = new ArrayList<>();
+        for (Vertex<TimeAtAirport> minVertex : minVerticies) {
+            DijkstraAlgorithm dijk = new DijkstraAlgorithm();
+            DijkstraAlgorithm.ShortestPathsInfo spInfo = dijk.findShortestPaths(minVertex, graph);
+            for (Vertex<TimeAtAirport> v : graph.vertices()) {
+                if (!v.getElement().getAirport().equals(airportDepart)) {
+                    if (spInfo.isReachable(graph.getPositionOfVertex(v))) {
+                        int[] path = spInfo.pathFromSourceTo(graph.getPositionOfVertex(v));
 
-        for(Vertex<TimeAtAirport> v : graph.vertices()) {
-            if (!v.getElement().getAirport().equals(airportDepart)) {
-                if (spInfo.isReachable(graph.getPositionOfVertex(v))) {
-                    int[] path = spInfo.pathFromSourceTo(graph.getPositionOfVertex(v));
-                    int cost = 0;
+                        int cost = 0;
+                        TimeAtAirport lastVisited = null;
 
-                    TimeAtAirport lastVisited = null;
+                        ArrayList<Flight> itinerary = new ArrayList<>();
 
-                    for(int i = 0; i < path.length -1; i++) {
-                        Flight flight = graph.getEdge(graph.getVertexAtPosition(path[i]), graph.getVertexAtPosition(path[i+1])).getElement();
-                        if (flight.getCost() != 0) {
-                            lastVisited = graph.getVertexAtPosition(path[i+1]).getElement();
-                            cost += flight.getCost();
+                        for (int i = 0; i < path.length - 1; i++) {
+                            Vertex<TimeAtAirport> leave = graph.getVertexAtPosition(path[i]);
+                            Vertex<TimeAtAirport> arrive = graph.getVertexAtPosition(path[i + 1]);
+
+                            Flight flight = graph.getEdge(leave, arrive).getElement();
+                            if (flight.getCost() != 0) {
+                                lastVisited = graph.getVertexAtPosition(path[i + 1]).getElement();
+                                cost += flight.getCost();
+                                itinerary.add(flight);
+                            }
                         }
-                    }
 
-                    if (cost <= dollars && lastVisited != null && !visited.contains(lastVisited)) {
-                        visited.add(lastVisited);
-                        System.out.println(lastVisited);
+                        if (cost <= dollars && lastVisited != null && !visited.contains(lastVisited)) {
+                            visited.add(lastVisited);
+                            System.out.println("----Itenerary----");
+                            itinerary.forEach(System.out::println);
+                            System.out.println("Total cost=" + cost);
+                            System.out.println();
+                        }
                     }
                 }
             }
