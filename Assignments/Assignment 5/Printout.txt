@@ -1,0 +1,102 @@
+----- Starting Test for file flights1.txt (verbose=false)
+
+
+>>>Customer requested departure from YOW after  8:10 arriving at YVR before 22:30
+Official Itinerary: YOW 12:00 to YVR 18:31
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+AC161 YYZ Toronto 16:15 YVR Vancouver 18:31 $600
+Total cost=800
+
+>>>Customer requested departure from YOW after 10:00 arriving at YVR before 18:30
+No itineraries available; please widen your search times.
+
+>>>Customer requested departure from YOW after 10:00 arriving at YVR before 24:00
+Official Itinerary: YOW 12:00 to YVR 23:47
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+AC161 YYZ Toronto 16:15 YVR Vancouver 18:31 $600
+Total cost=800
+
+>>>Customer requested departure from YOW after 13:30 arriving at YVR before 15:30
+No itineraries available; please widen your search times.
+
+>>>Customer requested departure from YUL after 12:00 arriving at YVR before 24:00
+Official Itinerary: YUL 14:05 to YVR 23:47
+WJ217 YUL Montreal 19:15 YYC Calgary 21:59 $700
+WJ131 YYC Calgary 23:15 YVR Vancouver 23:47 $83
+Total cost=783
+
+----- Ending Test for file flight1.txt
+
+
+----- Starting Test for file flights2.txt (verbose=false)
+
+
+>>>Customer requested departure from YOW after  8:10 arriving at YVR before 22:30
+Official Itinerary: YOW  8:20 to YVR 22:19
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+AC33 YYZ Toronto 20:05 YVR Vancouver 22:05 $200
+Total cost=400
+
+>>>Customer requested departure from YOW after 10:00 arriving at YVR before 18:30
+Official Itinerary: YOW 12:00 to YVR 18:15
+AC104 YOW Ottawa 13:20 YUL Montreal 14:05 $150
+AC_195 YUL Montreal 17:50 YVR Vancouver 18:15 $500
+Total cost=650
+
+>>>Customer requested departure from YOW after 10:00 arriving at YVR before 24:00
+Official Itinerary: YOW 12:00 to YVR 23:47
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+AC145 YYZ Toronto 22:55 YYC Calgary 23:12 $51
+WJ131 YYC Calgary 23:15 YVR Vancouver 23:47 $83
+Total cost=334
+
+>>>Customer requested departure from YOW after 13:30 arriving at YVR before 15:30
+No itineraries available; please widen your search times.
+
+>>>Customer requested departure from YUL after 12:00 arriving at YVR before 24:00
+Official Itinerary: YUL 13:30 to YVR 23:47
+AC_183 YUL Montreal 13:30 YVR Vancouver 16:07 $478
+Total cost=478
+
+----- Ending Test for file flight2.txt
+
+
+Now tests for Part 3:
+>>>> Here you will provide info on where to go under $500
+----Itenerary----
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+Total cost=200
+
+----Itenerary----
+AC104 YOW Ottawa 13:20 YUL Montreal 14:05 $150
+Total cost=150
+
+----Itenerary----
+AC455 YOW Ottawa 14:00 YYZ Toronto 15:07 $225
+Total cost=225
+
+>>>> Here you will provide info on where to go under $1000
+----Itenerary----
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+Total cost=200
+
+----Itenerary----
+AC104 YOW Ottawa 13:20 YUL Montreal 14:05 $150
+Total cost=150
+
+----Itenerary----
+WS363 YOW Ottawa 12:00 YYZ Toronto 13:04 $200
+AC161 YYZ Toronto 16:15 YVR Vancouver 18:31 $600
+Total cost=800
+
+----Itenerary----
+AC104 YOW Ottawa 13:20 YUL Montreal 14:05 $150
+WJ217 YUL Montreal 19:15 YYC Calgary 21:59 $700
+Total cost=850
+
+----Itenerary----
+AC455 YOW Ottawa 14:00 YYZ Toronto 15:07 $225
+Total cost=225
+
+
+Process finished with exit code 0
