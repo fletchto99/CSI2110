@@ -288,6 +288,10 @@ public class BuildItinerary {
             return result;
         }
 
+        public boolean equals(Object o) {
+            return (this.compareTo(o)==0);
+        }
+
         public String toString() {
             return airport + " " + time;
         }

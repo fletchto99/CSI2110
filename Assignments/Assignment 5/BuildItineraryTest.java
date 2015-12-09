@@ -35,7 +35,7 @@ public class BuildItineraryTest {
 		boolean verbose=false;
 		System.out.println("\n----- Starting Test for file flights1.txt (verbose="+verbose+")\n");
 		
-		BuildItinerary buildItiner= readFlightsIntoGraph("/Users/mattlanglois/Documents/Programming/School/CSI2110/Assignments/Assignment 5/flights1.txt",verbose);
+		BuildItinerary buildItiner= readFlightsIntoGraph("flights1.txt",verbose);
         
 		ArrayList<Flight> itin;
 		
@@ -55,7 +55,7 @@ public class BuildItineraryTest {
 		verbose=false;
 		System.out.println("\n----- Starting Test for file flights2.txt (verbose="+verbose+")\n");
 		
-		buildItiner= readFlightsIntoGraph("/Users/mattlanglois/Documents/Programming/School/CSI2110/Assignments/Assignment 5/flights2.txt",verbose);
+		buildItiner= readFlightsIntoGraph("flights2.txt",verbose);
 		
 		itin=buildItiner.cheapestItinerary("YOW","YVR",new Time("8:10"), new Time("22:30"),verbose);
 		
@@ -72,7 +72,7 @@ public class BuildItineraryTest {
 		//*************************** part 3 ***************************************************//
 		System.out.println("\nNow tests for Part 3:");
 		
-		buildItiner= readFlightsIntoGraph("/Users/mattlanglois/Documents/Programming/School/CSI2110/Assignments/Assignment 5/flights1.txt",false);
+		buildItiner= readFlightsIntoGraph("flights1.txt",false);
         
 		verbose=false;
 		buildItiner.whereMoneyCanGetMe("YOW", new Time("5:00"), 500, verbose);
